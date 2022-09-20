@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class wallReflect : MonoBehaviour
 {
-    // ¹İ»çµÇ´Â º¤ÅÍ °è»ê, a °øÀÇ º¤ÅÍ, n ¹ı¼± º¤ÅÍ, b ³ª¿À´Â º¤ÅÍ
+    // ë°˜ì‚¬ë˜ëŠ” ë²¡í„° ê³„ì‚°, a ê³µì˜ ë²¡í„°, n ë²•ì„  ë²¡í„°, b ë‚˜ì˜¤ëŠ” ë²¡í„°
     Vector2 calculateWallReflect(Vector2 a, Vector2 n)
     {
         Vector2 p = -Vector2.Dot(a, n) / n.magnitude * n / n.magnitude;
@@ -24,7 +24,7 @@ public class wallReflect : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // º® Ãæµ¹½Ã °ø ¹İ»ç
+        // ë²½ ì¶©ëŒì‹œ ê³µ ë°˜ì‚¬
         if(collision.gameObject.CompareTag("ball"))
         {
             Rigidbody2D ballRB = collision.gameObject.GetComponent<Rigidbody2D>();

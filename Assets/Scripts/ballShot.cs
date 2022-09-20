@@ -9,9 +9,9 @@ public class ballShot : MonoBehaviour
     public Vector2 dragdirection;
     Rigidbody2D myRigidBody2D;
 
-    // ½Ç½Ã°£ ¼Óµµ ÃøÁ¤ °ª
+    // ì‹¤ì‹œê°„ ì†ë„ ì¸¡ì • ê°’
     public Vector2 velocity;
-    //rangeCircle, arrowRotate º¯¼ö
+    //rangeCircle, arrowRotate ë³€ìˆ˜
     public GameObject rangeCircle;
     public GameObject arrowRotate;
     
@@ -28,10 +28,10 @@ public class ballShot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // velocity¿¡ °è¼Ó °ªÀ» ¾÷µ¥ÀÌÆ®ÇØÁÜ
+        // velocityì— ê³„ì† ê°’ì„ ì—…ë°ì´íŠ¸í•´ì¤Œ
         velocity = myRigidBody2D.velocity;
 
-        // drag µ¿¾È ¸¶¿ì½º À§Ä¡¸¦ ÃßÀû
+        // drag ë™ì•ˆ ë§ˆìš°ìŠ¤ ìœ„ì¹˜ë¥¼ ì¶”ì 
         dragPos = Input.mousePosition;
         dragdirection = startPos - dragPos;
     }
