@@ -6,27 +6,28 @@ using UnityEngine.SceneManagement;
 public class gameManager : MonoBehaviour
 {
     #region Singleton class:GameManager
-    public static gameManager Instance;
+    public static gameManager gameManagerInstance;
 
     void Awake()
     {
-        if (Instance == null )
+        if (gameManagerInstance == null )
         {
-            Instance = this;
+            gameManagerInstance = this;
         }
     }
     #endregion
 
-
+    public int life = 1;
     // Start is called before the first frame update
     void Start()
     {
-        
+    
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
+
     }
 }

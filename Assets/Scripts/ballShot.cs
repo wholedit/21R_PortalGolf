@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ballShot : MonoBehaviour
 {
+
+
     Vector2 startPos, endPos, dragPos;
     public Vector2 direction;
     public Vector2 dragdirection;
@@ -16,6 +18,7 @@ public class ballShot : MonoBehaviour
     public GameObject arrowRotate;
     
     public float shootPower = 10f;
+    public GameObject retryBtn;
 
 
 
@@ -34,6 +37,11 @@ public class ballShot : MonoBehaviour
         // drag 동안 마우스 위치를 추적
         dragPos = Input.mousePosition;
         dragdirection = startPos - dragPos;
+
+        if ( gameManager.gameManagerInstance.life == 0)
+        {
+
+        }
     }
 
     void OnMouseDown()
@@ -59,7 +67,7 @@ public class ballShot : MonoBehaviour
             myRigidBody2D.AddForce(direction * shootPower);
             rangeCircle.SetActive(false);
             arrowRotate.SetActive(false);
-
+            gameManager.gameManagerInstance.life -= 1;
         }
     }
 

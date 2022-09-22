@@ -53,3 +53,6 @@ TagManager:
   - name: ball
     uniqueID: 1992259539
     locked: 0
+  - name: portalCurtain
+    uniqueID: 3428134481
+    locked: 0

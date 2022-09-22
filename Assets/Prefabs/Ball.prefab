@@ -290,7 +290,6 @@ GameObject:
   - component: {fileID: 7943591125843744303}
   - component: {fileID: 7943591125843744296}
   - component: {fileID: 7943591125843744297}
-  - component: {fileID: 7943591125843744300}
   - component: {fileID: 7943591125843744291}
   m_Layer: 0
   m_Name: Ball
@@ -424,24 +423,6 @@ MonoBehaviour:
   rangeCircle: {fileID: 7943591126761146609}
   arrowRotate: {fileID: 7943591125421891347}
   shootPower: 10
---- !u!256 &7943591125843744300
-FrictionJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7943591125843744298}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: -3}
-  m_MaxForce: 2
-  m_MaxTorque: 1
 --- !u!96 &7943591125843744291
 TrailRenderer:
   serializedVersion: 2
