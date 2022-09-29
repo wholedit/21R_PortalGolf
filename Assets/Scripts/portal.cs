@@ -4,28 +4,38 @@ using UnityEngine;
 
 public class portal : MonoBehaviour
 {
-    private Vector2 enterVelocity;    
+    private Vector2 enterVelocity;
+    public GameObject Border;
+    public portalManager manager;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "ball")
         {
-            
+
+            //들어오는 공 속도
             enterVelocity = collision.gameObject.GetComponent<Rigidbody2D>().velocity;
 
+            //잠시 벽 끄기
+            Border.SetActive(false);
             Debug.Log(enterVelocity);
 
             if ( gameObject.name == "bluePortal")
             {
-                portalManager.portalManagerInstance.DisableCollider("orange");
-                portalManager.portalManagerInstance.CreateClone("atOrange");
+                // 반대쪽 포탈 콜라이더 죽이고 클론생성하기
+                manager.DisableCollider("orange");
+                manager.CreateClone("atOrange");
+                // 클론 속도주기
+                GameObject.Find("clone").GetComponent<Rigidbody2D>().velocity = enterVelocity;
                 
             }
 
             else if( gameObject.name == "orangePortal")
             {
-                portalManager.portalManagerInstance.DisableCollider("blue");
-                portalManager.portalManagerInstance.CreateClone("atBlue");
+                manager.DisableCollider("blue");
+                manager.CreateClone("atBlue");
+                GameObject.Find("clone").GetComponent<Rigidbody2D>().velocity = enterVelocity;
+
             }
 
         }
@@ -36,20 +46,18 @@ public class portal : MonoBehaviour
     {
         if (collision.gameObject.tag == "ball")
         {
+            //다시 벽 켜기
+            Border.SetActive(true);
 
             if (gameObject.name != "clone")
             {
                 Destroy(collision.gameObject);
-                portalManager.portalManagerInstance.EnableColliders();
+                manager.EnableColliders();
                 GameObject.Find("clone").name = "Ball";
             }
         }
     }
-//작성중
-    public void giveVelocity(GameObject gameObject)
-    {
-        gameObject.GetComponent<Rigidbody2D>().velocity = enterVelocity;
-    }
+
     // Start is called before the first frame update
     void Start()
     {

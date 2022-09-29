@@ -11,14 +11,12 @@ public class ballShot : MonoBehaviour
     public Vector2 dragdirection;
     Rigidbody2D myRigidBody2D;
 
-    // 실시간 속도 측정 값
-    public Vector2 velocity;
+
     //rangeCircle, arrowRotate 변수
     public GameObject rangeCircle;
     public GameObject arrowRotate;
     
     public float shootPower = 10f;
-    public GameObject retryBtn;
 
 
 
@@ -32,16 +30,14 @@ public class ballShot : MonoBehaviour
     void Update()
     {
         // velocity에 계속 값을 업데이트해줌
-        velocity = myRigidBody2D.velocity;
+        
+        gameManager.gameManagerInstance.velocity = myRigidBody2D.velocity;
 
+        ballStop();
         // drag 동안 마우스 위치를 추적
         dragPos = Input.mousePosition;
         dragdirection = startPos - dragPos;
 
-        if ( gameManager.gameManagerInstance.life == 0)
-        {
-
-        }
     }
 
     void OnMouseDown()
@@ -63,11 +59,12 @@ public class ballShot : MonoBehaviour
             {
                 direction = direction.normalized * 70f;
             }
-
+            
             myRigidBody2D.AddForce(direction * shootPower);
             rangeCircle.SetActive(false);
             arrowRotate.SetActive(false);
-            gameManager.gameManagerInstance.life -= 1;
+            Invoke("minusLife", 0.05f);
+
         }
     }
 
@@ -80,4 +77,17 @@ public class ballShot : MonoBehaviour
         }
     }
 
+    void ballStop()
+    {
+        if (myRigidBody2D.velocity.x < 0.5f && myRigidBody2D.velocity.x > -0.5f && myRigidBody2D.velocity.y < 0.5f && myRigidBody2D.velocity.y > -0.5f)
+        {
+                myRigidBody2D.velocity = new Vector2(0, 0);
+        }
+    }
+
+    void minusLife()
+    {
+        gameManager.gameManagerInstance.life -= 1;
+        Debug.Log(gameManager.gameManagerInstance.life);
+    }
 }
