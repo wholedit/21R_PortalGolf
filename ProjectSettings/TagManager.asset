@@ -56,3 +56,6 @@ TagManager:
   - name: portalCurtain
     uniqueID: 3428134481
     locked: 0
+  - name: UIImage
+    uniqueID: 2198494801
+    locked: 0

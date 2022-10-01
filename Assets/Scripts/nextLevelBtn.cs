@@ -19,6 +19,9 @@ public class nextLevelBtn : MonoBehaviour
 
     public void nextLevel()
     {
-        //SceneManager.LoadScene("Stage2");
+        Scene scene = SceneManager.GetActiveScene();
+        int curScene = scene.buildIndex;
+        int nextScene = curScene + 1;
+        SceneManager.LoadScene(nextScene);
     }
 }

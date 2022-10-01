@@ -19,6 +19,6 @@ public class retryBtn : MonoBehaviour
 
     public void retryGame()
     {
-        SceneManager.LoadScene("PortalGolf");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

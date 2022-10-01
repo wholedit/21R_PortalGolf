@@ -21,6 +21,7 @@ public class gameManager : MonoBehaviour
     public Vector2 velocity;
     public GameObject retryPanel;
     public GameObject nextLevelPanel;
+    public GameObject stagePanel;
 
 
     // Start is called before the first frame update
@@ -29,6 +30,9 @@ public class gameManager : MonoBehaviour
         retryPanel.SetActive(false);
         nextLevelPanel.SetActive(false);
         Time.timeScale = 1.0f;
+        stagePanel.SetActive(true);
+        Invoke("setFalseStagePanel", 1.0f);
+        
     }
 
     // Update is called once per frame
@@ -57,5 +61,8 @@ public class gameManager : MonoBehaviour
 
     }
 
-
+    void setFalseStagePanel()
+    {
+        stagePanel.SetActive(false);
+    }
 }
