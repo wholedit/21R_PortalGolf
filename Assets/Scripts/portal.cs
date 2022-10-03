@@ -7,6 +7,10 @@ public class portal : MonoBehaviour
     private Vector2 enterVelocity;
     public GameObject Border;
     public portalManager manager;
+    public float outDirection = 1f;
+    public float accelPower = 1f;
+
+    public BoxCollider2D[] cols;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -16,8 +20,14 @@ public class portal : MonoBehaviour
             //들어오는 공 속도
             enterVelocity = collision.gameObject.GetComponent<Rigidbody2D>().velocity;
 
-            //잠시 벽 끄기
-            Border.SetActive(false);
+            //잠시 벽collider 끄기
+            cols = Border.GetComponentsInChildren<BoxCollider2D>();
+            foreach (BoxCollider2D col in cols)
+            {
+                col.enabled = false;
+            }
+
+
             Debug.Log(enterVelocity);
 
             if ( gameObject.name == "bluePortal")
@@ -26,7 +36,7 @@ public class portal : MonoBehaviour
                 manager.DisableCollider("orange");
                 manager.CreateClone("atOrange");
                 // 클론 속도주기
-                GameObject.Find("clone").GetComponent<Rigidbody2D>().velocity = enterVelocity;
+                GameObject.Find("clone").GetComponent<Rigidbody2D>().velocity = enterVelocity * outDirection * accelPower;
                 
             }
 
@@ -34,7 +44,7 @@ public class portal : MonoBehaviour
             {
                 manager.DisableCollider("blue");
                 manager.CreateClone("atBlue");
-                GameObject.Find("clone").GetComponent<Rigidbody2D>().velocity = enterVelocity;
+                GameObject.Find("clone").GetComponent<Rigidbody2D>().velocity = enterVelocity * outDirection * accelPower;
 
             }
 
@@ -47,7 +57,11 @@ public class portal : MonoBehaviour
         if (collision.gameObject.tag == "ball")
         {
             //다시 벽 켜기
-            Border.SetActive(true);
+            cols = Border.GetComponentsInChildren<BoxCollider2D>();
+            foreach (BoxCollider2D col in cols)
+            {
+                col.enabled = true;
+            }
 
             if (gameObject.name != "clone")
             {
