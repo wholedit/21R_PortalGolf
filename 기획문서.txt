@@ -6,3 +6,8 @@
 4-1. 나아갈 방향의 좌표 구하기
 arrowPos = startPos + (startPos - endPos)
 4-2. 라인 렌더러 설정하기
+
+2021
+
+674
+1346

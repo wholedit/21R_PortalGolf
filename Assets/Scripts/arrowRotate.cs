@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,10 +22,10 @@ public class arrowRotate : MonoBehaviour
 
 
         magnitude = dragdirection.GetComponent<ballShot>().dragdirection.magnitude;
-        if (magnitude >= 70f)
+        if (magnitude >= 200f)
         {
-            magnitude = 70f;
+            magnitude = 200f;
         }
-        transform.localScale = new Vector2(magnitude * 0.02f, magnitude * 0.02f);
+        transform.localScale = new Vector2(magnitude * 0.005f, magnitude * 0.005f);
     }
 }

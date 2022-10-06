@@ -405,7 +405,7 @@ Transform:
   m_GameObject: {fileID: 7032440125492498484}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.06, y: -3, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7895735051194580599}
@@ -455,7 +455,7 @@ SpriteRenderer:
   m_SortingLayerID: 1992259539
   m_SortingLayer: 3
   m_SortingOrder: 2
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -1622850198, guid: 694a1b23817fa494bb1551dafd21fcfc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -486,7 +486,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!58 &5846426904508454698
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -500,9 +500,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0035062432, y: 0.010518679}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.45091236
 --- !u!114 &3300077804663854443
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -519,7 +519,7 @@ MonoBehaviour:
   dragdirection: {x: 0, y: 0}
   rangeCircle: {fileID: 2158178648905429681}
   arrowRotate: {fileID: 6938750620414218389}
-  shootPower: 10
+  defaultShootPower: 4
 --- !u!96 &1889110588489418361
 TrailRenderer:
   serializedVersion: 2

@@ -15,15 +15,16 @@ public class ballShot : MonoBehaviour
     //rangeCircle, arrowRotate 변수
     public GameObject rangeCircle;
     public GameObject arrowRotate;
-    
-    public float shootPower = 10f;
 
+    public float defaultShootPower = 4;
+    float shootPower;
 
 
     // Start is called before the first frame update
     void Start()
     {
         myRigidBody2D = gameObject.GetComponent<Rigidbody2D>();
+        shootPower = defaultShootPower;
     }
 
     // Update is called once per frame
@@ -34,10 +35,16 @@ public class ballShot : MonoBehaviour
         gameManager.gameManagerInstance.velocity = myRigidBody2D.velocity;
 
         ballStop();
-        // drag 동안 마우스 위치를 추적
-        dragPos = Input.mousePosition;
-        dragdirection = startPos - dragPos;
 
+
+        if (gameManager.gameManagerInstance.life == 0)
+        {
+            shootPower = 0f;
+        }
+        else
+        {
+            shootPower = defaultShootPower;
+        }
     }
 
     void OnMouseDown()
@@ -55,9 +62,9 @@ public class ballShot : MonoBehaviour
             endPos = Input.mousePosition;
             direction = startPos - endPos;
             myRigidBody2D.isKinematic = false;
-            if (direction.magnitude > 70f)
+            if (direction.magnitude > 200f)
             {
-                direction = direction.normalized * 70f;
+                direction = direction.normalized * 200f;
             }
             
             myRigidBody2D.AddForce(direction * shootPower);
@@ -72,8 +79,15 @@ public class ballShot : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            rangeCircle.SetActive(true);
-            arrowRotate.SetActive(true);
+            if (gameManager.gameManagerInstance.life != 0)
+            {
+                rangeCircle.SetActive(true);
+                arrowRotate.SetActive(true);
+                // drag 동안 마우스 위치를 추적
+                dragPos = Input.mousePosition;
+                dragdirection = startPos - dragPos;
+
+            }
         }
     }
 
@@ -87,6 +101,7 @@ public class ballShot : MonoBehaviour
 
     void minusLife()
     {
+        if (gameManager.gameManagerInstance.life != 0)
         gameManager.gameManagerInstance.life -= 1;
         Debug.Log(gameManager.gameManagerInstance.life);
     }

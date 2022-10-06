@@ -16,13 +16,13 @@ public class rangeCircle : MonoBehaviour
     void Update()
     {
         magnitude = dragdirection.GetComponent<ballShot>().dragdirection.magnitude;
-        if (magnitude >= 70f)
+        if (magnitude >= 200f)
         {
-            magnitude = 70f;
+            magnitude = 200f;
         }
         
         //Debug.Log(magnitude);
-        transform.localScale = new Vector2(magnitude* 0.1f,magnitude* 0.1f);
+        transform.localScale = new Vector2(magnitude* 0.025f,magnitude* 0.025f);
     }
 
 }

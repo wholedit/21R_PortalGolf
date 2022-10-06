@@ -16,8 +16,8 @@ TagManager:
   - Water
   - UI
   - Border
-  - 
-  - 
+  - flyingObject
+  - Obstacle
   - 
   - 
   - 
@@ -48,11 +48,11 @@ TagManager:
   - name: background
     uniqueID: 2567663897
     locked: 0
-  - name: ball
-    uniqueID: 1992259539
-    locked: 0
   - name: map
     uniqueID: 1793474739
+    locked: 0
+  - name: ball
+    uniqueID: 1992259539
     locked: 0
   - name: portalCurtain
     uniqueID: 3428134481

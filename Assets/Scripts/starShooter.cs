@@ -5,6 +5,7 @@ using UnityEngine;
 public class starShooter : MonoBehaviour
 {
     public GameObject star;
+    public GameObject shootingPoint;
     public float shootingInterval = 1f;
     
     // Start is called before the first frame update
@@ -21,8 +22,8 @@ public class starShooter : MonoBehaviour
 
     void makingStar()
     {
-        float x = gameObject.transform.position.x;
-        float y = gameObject.transform.position.y;
+        float x = shootingPoint.transform.position.x;
+        float y = shootingPoint.transform.position.y;
         Instantiate(star, new Vector3(x, y, 0), Quaternion.identity);
     }
 }

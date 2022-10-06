@@ -21,8 +21,7 @@ public class gameManager : MonoBehaviour
     public Vector2 velocity;
     public GameObject retryPanel;
     public GameObject nextLevelPanel;
-    public GameObject stagePanel;
-
+    public GameObject stagePanel;      
 
     // Start is called before the first frame update
     void Start()
