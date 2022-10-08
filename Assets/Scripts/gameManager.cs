@@ -17,6 +17,28 @@ public class gameManager : MonoBehaviour
     }
     #endregion
 
+    #region playtimeManager
+    private float stagePlaytime;
+    private float totalPlaytime;
+
+    public void calculatePlaytime()
+    {
+        stagePlaytime += Time.deltaTime;
+    }
+
+    public void calculateTotalPlaytime()
+    {
+        totalPlaytime = PlayerPrefs.GetFloat("totalPlaytime") + stagePlaytime;
+    }
+
+    public void savePlaytime()
+    {
+        PlayerPrefs.SetFloat("stagePlaytime", stagePlaytime);
+        PlayerPrefs.SetFloat("totalPlaytime", totalPlaytime);
+    }
+
+    #endregion
+
     public int life = 1;
     public Vector2 velocity;
     public GameObject retryPanel;
@@ -26,6 +48,7 @@ public class gameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         retryPanel.SetActive(false);
         nextLevelPanel.SetActive(false);
         Time.timeScale = 1.0f;
@@ -37,6 +60,8 @@ public class gameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //calculating stageplaytime
+        calculatePlaytime();
 
         if (life == 0 && velocity.x == 0 && velocity.y == 0)
         {
@@ -44,8 +69,13 @@ public class gameManager : MonoBehaviour
             callRetryPanel();
         }
 
-    }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
 
+    }
+    
 
     public void callRetryPanel()
     {
@@ -64,4 +94,5 @@ public class gameManager : MonoBehaviour
     {
         stagePanel.SetActive(false);
     }
+
 }
