@@ -33,6 +33,7 @@ public class ballShot : MonoBehaviour
         // velocity에 계속 값을 업데이트해줌
         
         gameManager.gameManagerInstance.velocity = myRigidBody2D.velocity;
+        //Debug.Log(gameManager.gameManagerInstance.velocity);
 
         ballStop();
 
@@ -59,6 +60,8 @@ public class ballShot : MonoBehaviour
     {
         if (Input.GetMouseButtonUp(0))
         {
+            Invoke("minusLife", 0.05f);
+
             endPos = Input.mousePosition;
             direction = startPos - endPos;
             myRigidBody2D.isKinematic = false;
@@ -66,11 +69,10 @@ public class ballShot : MonoBehaviour
             {
                 direction = direction.normalized * 200f;
             }
-            
             myRigidBody2D.AddForce(direction * shootPower);
+            SoundManager.Instance.PlaySFXSound("ballSFX");
             rangeCircle.SetActive(false);
             arrowRotate.SetActive(false);
-            Invoke("minusLife", 0.05f);
 
         }
     }
@@ -97,12 +99,17 @@ public class ballShot : MonoBehaviour
         {
                 myRigidBody2D.velocity = new Vector2(0, 0);
         }
+
+        if (transform.position.x < -6f || transform.position.x > 6f || transform.position.y < -8f || transform.position.y > 8f)
+        {
+            myRigidBody2D.velocity = new Vector2(0, 0);
+        }
     }
 
     void minusLife()
     {
         if (gameManager.gameManagerInstance.life != 0)
         gameManager.gameManagerInstance.life -= 1;
-        Debug.Log(gameManager.gameManagerInstance.life);
+        //Debug.Log(gameManager.gameManagerInstance.life);
     }
 }

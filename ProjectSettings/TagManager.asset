@@ -48,14 +48,20 @@ TagManager:
   - name: background
     uniqueID: 2567663897
     locked: 0
-  - name: map
-    uniqueID: 1793474739
+  - name: bunker
+    uniqueID: 3428134481
+    locked: 0
+  - name: Goal
+    uniqueID: 1170774371
     locked: 0
   - name: ball
     uniqueID: 1992259539
     locked: 0
-  - name: portalCurtain
-    uniqueID: 3428134481
+  - name: map
+    uniqueID: 1793474739
+    locked: 0
+  - name: boundary
+    uniqueID: 4151550649
     locked: 0
   - name: UIImage
     uniqueID: 2198494801

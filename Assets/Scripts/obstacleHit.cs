@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class obstacleHit : MonoBehaviour
@@ -21,11 +22,21 @@ public class obstacleHit : MonoBehaviour
         if( collision.gameObject.CompareTag("ball"))
         {
             Invoke("InvokeCallRetryPanel", 0.08f);
+            Invoke("InvokeSound", 0.01f);
+
         }
     }
 
     void InvokeCallRetryPanel()
     {
         gameManager.gameManagerInstance.callRetryPanel();
+
+    }
+
+    void InvokeSound()
+    {
+        int num = Random.Range(0, 5) + 1;
+        string callName = "meow" + num;
+        SoundManager.Instance.PlaySFXSound(callName);
     }
 }

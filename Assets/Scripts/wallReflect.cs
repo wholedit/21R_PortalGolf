@@ -30,6 +30,8 @@ public class wallReflect : MonoBehaviour
             Rigidbody2D ballRB = collision.gameObject.GetComponent<Rigidbody2D>();
             Vector2 velocity = gameManager.gameManagerInstance.velocity;
             ballRB.velocity = calculateWallReflect(velocity, -collision.GetContact(0).normal);
+
+            SoundManager.Instance.PlaySFXSound("glassBump");
         }
     }
 }

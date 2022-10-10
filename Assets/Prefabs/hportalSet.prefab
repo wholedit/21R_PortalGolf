@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4143545486349675446}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: -0.7071068}
-  m_LocalPosition: {x: 0.053, y: -0.009999841, z: -0.8200412}
+  m_LocalPosition: {x: 0.085, y: -0.009999841, z: -0.8200412}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -377,7 +377,7 @@ MonoBehaviour:
   randomRipplesFrequency: 0
   randomRipplesSize: 0.3
   randomRipplesForce: 0.5
-  sortingLayer: 0
+  sortingLayer: -866832815
   orderInLayer: 0
   mf: {fileID: 4143545486349675453}
   mr: {fileID: 4143545486349675452}
@@ -697,8 +697,8 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -866832815
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!61 &4143545486349675443
@@ -775,7 +775,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4143545486560859713}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.051, y: 0, z: -0.8502395}
+  m_LocalPosition: {x: -0.092, y: 0, z: -0.8502395}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1123,7 +1123,7 @@ MonoBehaviour:
   randomRipplesFrequency: 0
   randomRipplesSize: 0.3
   randomRipplesForce: 0.5
-  sortingLayer: 0
+  sortingLayer: -866832815
   orderInLayer: 0
   mf: {fileID: 4143545486560859720}
   mr: {fileID: 4143545486560859727}
@@ -1443,8 +1443,8 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -866832815
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!61 &4143545486560859726
@@ -1687,7 +1687,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.0941937, y: 1}
+  m_Size: {x: 0.21, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &7172631866773940541
 MonoBehaviour:
@@ -1912,7 +1912,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.08949454, y: 1}
+  m_Size: {x: 0.21, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &7172631867912716785
 MonoBehaviour:

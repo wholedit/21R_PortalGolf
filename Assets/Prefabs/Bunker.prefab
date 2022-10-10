@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6065364863986710670}
   - component: {fileID: 6065364863986710669}
   - component: {fileID: 6065364863986710668}
+  - component: {fileID: 4754115747838555345}
   m_Layer: 0
   m_Name: Bunker
   m_TagString: Untagged
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1793474739
-  m_SortingLayer: 2
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7beaced79e91cfa4d9797e75cf1a7c7e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -274,3 +275,23 @@ PolygonCollider2D:
       - {x: 0.2575, y: -0.7675}
       - {x: 0.4975, y: -0.7175}
       - {x: 0.6975, y: -0.6775}
+--- !u!95 &4754115747838555345
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6065364863986710659}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0f541a130b2bbaf45a8d8628347cfcc9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

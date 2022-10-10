@@ -17,28 +17,6 @@ public class gameManager : MonoBehaviour
     }
     #endregion
 
-    #region playtimeManager
-    private float stagePlaytime;
-    private float totalPlaytime;
-
-    public void calculatePlaytime()
-    {
-        stagePlaytime += Time.deltaTime;
-    }
-
-    public void calculateTotalPlaytime()
-    {
-        totalPlaytime = PlayerPrefs.GetFloat("totalPlaytime") + stagePlaytime;
-    }
-
-    public void savePlaytime()
-    {
-        PlayerPrefs.SetFloat("stagePlaytime", stagePlaytime);
-        PlayerPrefs.SetFloat("totalPlaytime", totalPlaytime);
-    }
-
-    #endregion
-
     public int life = 1;
     public Vector2 velocity;
     public GameObject retryPanel;
@@ -53,15 +31,14 @@ public class gameManager : MonoBehaviour
         nextLevelPanel.SetActive(false);
         Time.timeScale = 1.0f;
         stagePanel.SetActive(true);
-        Invoke("setFalseStagePanel", 1.0f);
+        Invoke("setFalseStagePanel", 2.0f);
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        //calculating stageplaytime
-        calculatePlaytime();
+
 
         if (life == 0 && velocity.x == 0 && velocity.y == 0)
         {
@@ -73,6 +50,10 @@ public class gameManager : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
 
     }
     
@@ -81,6 +62,7 @@ public class gameManager : MonoBehaviour
     {
         retryPanel.SetActive(true);
         Time.timeScale = 0.0f;
+
     }
 
     public void callNextLevelPanel()

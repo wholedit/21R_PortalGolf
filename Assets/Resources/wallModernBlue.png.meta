@@ -209,7 +209,7 @@ TextureImporter:
         width: 715
         height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -217,6 +217,27 @@ TextureImporter:
       bones: []
       spriteID: 9c64c30a1e8906d4584877888a34d5ce
       internalID: -1539203611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wallModernBlue_5
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 4
+        width: 1933
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f07ba325ae8fda241ad6a331b57c1c5e
+      internalID: -680816769
       vertices: []
       indices: 
       edges: []
@@ -233,6 +254,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       wallModernBlue_2: -509351548
+      wallModernBlue_5: -680816769
       wallModernBlue_1: 2143496461
       wallModernBlue_0: 809705541
       wallModernBlue_3: 576257424

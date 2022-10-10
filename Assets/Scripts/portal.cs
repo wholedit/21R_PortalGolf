@@ -27,14 +27,15 @@ public class portal : MonoBehaviour
                 col.enabled = false;
             }
 
-
-            Debug.Log(enterVelocity);
-
             if ( gameObject.name == "bluePortal")
             {
                 // 반대쪽 포탈 콜라이더 죽이고 클론생성하기
                 manager.DisableCollider("orange");
                 manager.CreateClone("atOrange");
+
+                SoundManager.Instance.PlaySFXSound("warp");
+
+
                 // 클론 속도주기
                 GameObject.Find("clone").GetComponent<Rigidbody2D>().velocity = enterVelocity * outDirection * accelPower;
                 
@@ -44,6 +45,10 @@ public class portal : MonoBehaviour
             {
                 manager.DisableCollider("blue");
                 manager.CreateClone("atBlue");
+
+                SoundManager.Instance.PlaySFXSound("warp");
+
+
                 GameObject.Find("clone").GetComponent<Rigidbody2D>().velocity = enterVelocity * outDirection * accelPower;
 
             }
