@@ -27,7 +27,6 @@ public class DontDestroy : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        Invoke("frameFix", 0.1f);
 
     }
 
@@ -65,9 +64,5 @@ public class DontDestroy : MonoBehaviour
         timeCurrent = 0;
     }
 
-    private void frameFix()
-    {
-        Application.targetFrameRate = 40;
 
-    }
 }

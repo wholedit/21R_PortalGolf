@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class skipBtn : MonoBehaviour
+public class skipNo : MonoBehaviour
 {
     public GameObject skipPopup;
     // Start is called before the first frame update
@@ -18,8 +17,8 @@ public class skipBtn : MonoBehaviour
         
     }
 
-    public void openPopup()
+    public void NoBtn()
     {
-        skipPopup.SetActive(true);
+        skipPopup.SetActive(false);
     }
 }

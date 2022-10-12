@@ -14,6 +14,8 @@ public class gameManager : MonoBehaviour
         {
             gameManagerInstance = this;
         }
+        Invoke("frameFix", 0.1f);
+
     }
     #endregion
 
@@ -21,14 +23,15 @@ public class gameManager : MonoBehaviour
     public Vector2 velocity;
     public GameObject retryPanel;
     public GameObject nextLevelPanel;
-    public GameObject stagePanel;      
+    public GameObject stagePanel;
+    public GameObject skipPopup;
 
     // Start is called before the first frame update
     void Start()
     {
-
         retryPanel.SetActive(false);
         nextLevelPanel.SetActive(false);
+        skipPopup.SetActive(false);
         Time.timeScale = 1.0f;
         stagePanel.SetActive(true);
         Invoke("setFalseStagePanel", 2.0f);
@@ -75,6 +78,12 @@ public class gameManager : MonoBehaviour
     void setFalseStagePanel()
     {
         stagePanel.SetActive(false);
+    }
+
+    private void frameFix()
+    {
+        Application.targetFrameRate = 40;
+
     }
 
 }

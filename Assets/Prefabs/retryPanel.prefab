@@ -59,7 +59,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -227,7 +227,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2110718530196642540}
         m_TargetAssemblyTypeName: skipBtn, Assembly-CSharp
-        m_MethodName: skipLevel
+        m_MethodName: openPopup
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -249,6 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c5500385b8a9f1498e65f55cca6917f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skipPopup: {fileID: 768471243859815116, guid: 5ac70fbc3f4de8b419b864d4e5f3ceea, type: 3}
 --- !u!1 &631285610362360204
 GameObject:
   m_ObjectHideFlags: 0
